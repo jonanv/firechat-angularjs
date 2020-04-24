@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
 
-  chats: Observable<any[]>;
+  public chats: Observable<any[]>;
   constructor(
     firestore: AngularFirestore
   ) {
