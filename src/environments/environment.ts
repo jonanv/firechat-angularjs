@@ -11,8 +11,8 @@ export const environment = {
     projectId: "firechat-angularjs",
     storageBucket: "firechat-angularjs.appspot.com",
     messagingSenderId: "348019015736",
-    // appId: "1:348019015736:web:bb77140bde3c91508026cd",
-    // measurementId: "G-782F43DENW"
+    appId: "1:348019015736:web:bb77140bde3c91508026cd",
+    measurementId: "G-782F43DENW"
   }
 }
 
