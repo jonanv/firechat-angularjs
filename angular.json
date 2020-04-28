@@ -117,8 +117,13 @@
               "devServerTarget": "firechat-angularjs:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "firechat-angularjs"
 }
