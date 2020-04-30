@@ -62,6 +62,15 @@ or
 ng g c components/chat -is --skipTests
 ```
 
+# Create service without file .spec
+```javascript
+ng generate service services/chat --skipTests
+```
+or
+```javascript
+ng g s services/chat --skipTests
+```
+
 # Server local
 install global ```sudo npm i -g http-server```
 
