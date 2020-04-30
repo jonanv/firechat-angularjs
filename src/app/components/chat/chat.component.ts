@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import { ChatService } from '../../services/chat.service';
+import { first } from "rxjs/operators";
+
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
@@ -10,7 +13,15 @@ export class ChatComponent {
 
   message: string = "";
 
-  constructor() { }
+  constructor(
+    public chatService: ChatService
+  ) {
+    this.chatService.loadMessages()
+      // .pipe(first())
+      .subscribe((response: any) => {
+        console.log(response);
+      });
+  }
 
   sendMessage() {
     console.log('Mensaje enviado');
