@@ -18,11 +18,18 @@ export class ChatService {
   ) { }
 
   loadMessages() {
-    this.itemsCollections = this.angularFireStore.collection<Message>('chats');
+    this.itemsCollections = this.angularFireStore.collection<Message>('chats', ref => ref.orderBy('date', 'desc').limit(5));
+
     return this.itemsCollections.valueChanges()
       .pipe(map((response: Message[]) => {
         console.log(response);
-        this.chats = response;
+        // this.chats = response;
+        this.chats = [];
+
+        for (let message of response) {
+          this.chats.unshift(message);
+        }
+        return this.chats;
       }));
   }
 
