@@ -65,9 +65,10 @@ export class ChatService {
   addMessage(text: string) {
     // TODO: falta el uid
     let message: Message = {
-      name: 'Demo',
+      name: this.user.name,
       message: text,
       date: new Date().getTime(),
+      uid: this.user.uid
     }
 
     return this.itemsCollections.add(message);
