@@ -2,7 +2,13 @@
 
     <h1>Firechat</h1>
 
-    <app-login></app-login>
+    <div class="col-md-12 text-right" *ngIf="chatService.user.uid">
+        <button class="btn btn-outline-danger" (click)="logout()">
+            Salir
+        </button>
+    </div>
+
+    <app-login *ngIf="!chatService.user.uid"></app-login>
 
     <!-- <div class="chat-window">
         <app-chat></app-chat>

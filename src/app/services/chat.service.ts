@@ -33,10 +33,16 @@ export class ChatService {
   }
 
   login(method: string) {
-    this.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    if(method === 'google') {
+      this.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    }
+    else {
+      this.auth.signInWithPopup(new auth.TwitterAuthProvider());
+    }
   }
 
   logout() {
+    this.user = {};
     this.auth.signOut();
   }
 
