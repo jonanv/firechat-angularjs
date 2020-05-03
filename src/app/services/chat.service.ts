@@ -15,13 +15,24 @@ export class ChatService {
   private itemsCollections: AngularFirestoreCollection<Message>;
 
   public chats: Message[] = [];
+  public user: any = {};
 
   constructor(
     private afs: AngularFirestore,
     private auth: AngularFireAuth
-  ) { }
+  ) {
+    this.auth.authState
+      .subscribe(response => {
+        console.log('Esta es la autentificacion: ', response);
+        if(!response) {
+          return;
+        }
+        this.user.name = response.displayName;
+        this.user.uid = response.uid;
+      });
+  }
 
-  login() {
+  login(method: string) {
     this.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
 
