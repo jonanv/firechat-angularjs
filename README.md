@@ -8,7 +8,7 @@
 [![License][license-badge]][license-url]
 
 # Site
-<!-- ![firechat angularjs](https://i.imgur.com/B2heenX.png) -->
+![firechat angularjs](https://i.imgur.com/JhLbZbf.png)
 
 # Install dependences
 in ```firechat-angularjs/```
